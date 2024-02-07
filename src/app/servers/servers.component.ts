@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerComponent } from '../server/server.component';
 
 @Component({
   selector: 'app-servers',
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
 export class ServersComponent {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
-  serverName = '';
+  serverName = 'Test';
+  servers: ServerComponent[] = [];
 
   constructor() {
     setTimeout(() => {
@@ -17,12 +19,11 @@ export class ServersComponent {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'Server was created!';
-    console.log('Server was created!');
+    this.servers.push(new ServerComponent(this.serverName));
+    this.serverCreationStatus = 'Created server: ' + this.serverName;
   }
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
-    console.log('this servername is: ' + this.serverName);
   }
 }
