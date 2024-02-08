@@ -11,6 +11,8 @@
             [(ngModel)]="userName"/>
             <p>{{ userName }}</p>
             <button [disabled]="!allowReset" class="btn btn-primary" (click)="onClick()">Reset Username</button>
+            <hr>
+            <app-servers></app-servers>
         </div>
     </div>
 
