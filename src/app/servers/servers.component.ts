@@ -24,7 +24,7 @@ export class ServersComponent {
     console.log('Server was created');
     setTimeout(() => {
       this.serverWasCreated = false;
-    }, 2000);
+    }, 3000);
   }
 
   onUpdateServerName(event: Event) {
