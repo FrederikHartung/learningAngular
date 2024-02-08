@@ -2,23 +2,45 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-server',
-    templateUrl: './server.component.html'
+    templateUrl: './server.component.html',
+    styles: [
+        `
+        .online {
+            color: white;
+        }
+        `
+    ]
 })
 export class ServerComponent {
-    serverId: number = 1234
-    serverStatus: String = 'offline'
-    serverName: String = ''
+    serverId: number
+    serverStatus: String
+
+    constructor () {
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
+        this.serverId = Math.floor(Math.random() * 100)
+
+        setTimeout(() => {
+            this.checkServerStatus()
+        }, 3000)
+    }
 
     getServerStatus () {
         return this.serverStatus
     }
 
-    getServerName () {
-        return this.serverName
+    getColor () {
+        return this.serverStatus === 'online' ? 'green' : 'red'
     }
 
-    constructor (serverName: String) {
-        this.serverName = serverName
-        this.serverStatus = 'offline'
+    checkServerStatus () {
+        if(Math.random() > 0.5) {
+            this.serverStatus = 'online'
+        } else {
+            this.serverStatus = 'offline'
+        }
+
+        setTimeout(() => {
+            this.checkServerStatus()
+        }, 3000)
     }
 }
