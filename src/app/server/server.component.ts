@@ -38,6 +38,7 @@ export class ServerComponent {
         } else {
             this.serverStatus = 'offline'
         }
+        //test
 
         setTimeout(() => {
             this.checkServerStatus()
