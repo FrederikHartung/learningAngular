@@ -1,17 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h3>Hello World!</h3>
-            <hr>
-            <label>Server Name</label>
-            <input 
-            type="text"
-            class="form-control"
-            (input)="onInput($event)"
-            [(ngModel)]="userName"/>
-            <p>{{ userName }}</p>
-            <button [disabled]="!allowReset" class="btn btn-primary" (click)="onClick()">Reset Username</button>
-            <hr>
             <app-servers></app-servers>
         </div>
     </div>

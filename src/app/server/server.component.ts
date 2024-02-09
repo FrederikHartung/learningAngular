@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'app-server',
@@ -12,12 +12,11 @@ import { Component } from "@angular/core";
     ]
 })
 export class ServerComponent {
-    serverId: number
     serverStatus: String
+    @Input() serverName: String
 
     constructor () {
         this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
-        this.serverId = Math.floor(Math.random() * 100)
 
         setTimeout(() => {
             this.checkServerStatus()
@@ -38,10 +37,9 @@ export class ServerComponent {
         } else {
             this.serverStatus = 'offline'
         }
-        //test
 
         setTimeout(() => {
             this.checkServerStatus()
-        }, 3000)
+        }, Math.random() * 9000 + 1000)
     }
 }

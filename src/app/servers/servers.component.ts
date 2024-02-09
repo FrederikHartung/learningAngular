@@ -8,9 +8,10 @@ import { ServerComponent } from '../server/server.component';
 })
 export class ServersComponent {
   allowNewServer = false;
+  serverName = '';
   serverCreationStatus = 'No server was created!';
-  serverName = 'Test';
   serverWasCreated = false;
+  servers = [];
 
   constructor() {
     setTimeout(() => {
@@ -21,6 +22,7 @@ export class ServersComponent {
   onCreateServer() {
     this.serverCreationStatus = 'Created server: ' + this.serverName;
     this.serverWasCreated = true;
+    this.servers.push({serverName: this.serverName});
     console.log('Server was created');
     setTimeout(() => {
       this.serverWasCreated = false;
