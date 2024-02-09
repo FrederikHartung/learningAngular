@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class DetailsComponent {
   hideDetails = true;
+  log = [];
 
   onClick(){
     this.hideDetails = !this.hideDetails;
+
+    if (!this.hideDetails) {
+      this.log.push(new Date());
+    }
   }
 }

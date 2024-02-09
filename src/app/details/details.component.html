@@ -4,3 +4,10 @@ class="btn btn-primary"
 (click)="onClick()"
 >Display Details</button>
 <p [hidden]="hideDetails">Secret Ingredients: Tuna</p>
+@for (item of log; track $index) {
+    <li 
+    [hidden]="hideDetails"
+    [ngStyle]="{backgroundColor: $index >= 4 ? 'blue' : 'transparent'}"
+    [ngClass]="{testClass: $index >= 4}"
+    >{{ item }}</li>
+}
