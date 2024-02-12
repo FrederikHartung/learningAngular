@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   userName = 'DummyName';
   allowReset = this.userName === '' ? false : true;
-  title = 'my-second-app'
+  title = 'learning-angular'
 
   onClick() {
     this.userName = '';
