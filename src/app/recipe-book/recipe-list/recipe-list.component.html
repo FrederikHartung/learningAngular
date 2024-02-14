@@ -2,7 +2,7 @@
 <p>All recipes: </p>
 <p>{{ recipes }}</p>
 <hr>
-<li *ngFor="let item of recipes; index as i; trackBy: index">...</li>
+<li *ngFor="let abc of recipes; index as i;">Recipe name: {{ abc }}</li>
 <hr>
 @for (recipe of recipes; track $index) {
     <app-recipe-item [recipe]="recipe"></app-recipe-item>

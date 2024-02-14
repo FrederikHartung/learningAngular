@@ -7,6 +7,6 @@ import { Recipe } from '../recipe.model';
   styleUrl: './recipe-list.component.css'
 })
 export class RecipeListComponent {
-  recipes: Recipe[] = [new Recipe('A Test Recipe', 'This is simply a test', 'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg')];
+  public recipes: Recipe[] = [new Recipe('A Test Recipe', 'This is simply a test', 'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg')];
 
 }
