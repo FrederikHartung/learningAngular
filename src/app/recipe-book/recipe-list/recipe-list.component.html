@@ -1,3 +1,9 @@
+<p>Recipe list component works!</p>
+<p>All recipes: </p>
+<p>{{ recipes }}</p>
+<hr>
+<li *ngFor="let item of recipes; index as i; trackBy: index">...</li>
+<hr>
 @for (recipe of recipes; track $index) {
-    
+    <app-recipe-item [recipe]="recipe"></app-recipe-item>
 }

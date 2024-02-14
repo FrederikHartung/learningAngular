@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { Recipe } from '../../recipe.model';
   styleUrl: './recipe-item.component.css'
 })
 export class RecipeItemComponent {
-  recipe: Recipe;
+  @Input() recipe: Recipe;
 
   constructor(recipe: Recipe){
     this.recipe = recipe;
