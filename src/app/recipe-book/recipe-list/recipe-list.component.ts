@@ -11,7 +11,7 @@ export class RecipeListComponent {
     new Recipe(
       'Test Title',
       'Test Description',
-      'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg'
+      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg'
     ),
     new Recipe(
       'Test Title 2',

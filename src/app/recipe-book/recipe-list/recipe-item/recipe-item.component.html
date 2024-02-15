@@ -1,5 +1,6 @@
 <div class="recipe-item">
     <div>
+      <img [src]="recipe.getImagePath()" alt="{{ recipe.getName() }}">
       <h3>{{ recipe.getName() }}</h3>
       <p>{{ recipe.getDescription() }}</p>
     </div>
