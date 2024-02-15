@@ -9,8 +9,8 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent {
   @Input() recipe: Recipe;
 
-  constructor(recipe: Recipe){
-    this.recipe = recipe;
+  constructor(){
+
   }
 
   getRecipe(){

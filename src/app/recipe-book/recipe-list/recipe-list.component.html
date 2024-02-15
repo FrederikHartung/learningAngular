@@ -1,9 +1,10 @@
 <p>Recipe list component works!</p>
 <p>All recipes: </p>
-<p>{{ recipes }}</p>
 <hr>
-<li *ngFor="let abc of recipes; index as i;">Recipe name: {{ abc }}</li>
-<hr>
-@for (recipe of recipes; track $index) {
+<!-- @for (recipe of recipes; track $index) {
     <app-recipe-item [recipe]="recipe"></app-recipe-item>
-}
+} -->
+
+<li *ngFor="let recipe of recipes; index as i;">
+    <app-recipe-item [recipe]="recipe"></app-recipe-item>
+</li>
