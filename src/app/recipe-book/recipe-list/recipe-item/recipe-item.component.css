@@ -1,0 +1,21 @@
+.recipe-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .recipe-item img {
+    width: 50px; /* Oder jede andere gewünschte Größe */
+    height: auto;
+    border-radius: 5px; /* Optional für abgerundete Ecken */
+    margin-right: 10px;
+  }
+  
+  .recipe-item h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+  }
+  
+  .recipe-item p {
+    margin: 0;
+  }
+  

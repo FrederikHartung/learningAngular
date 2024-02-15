@@ -1,0 +1,27 @@
+.recipe-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .recipe-list ul {
+    padding-left: 0;
+  }
+  
+  .recipe-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .recipe-list img {
+    width: 100px;
+    margin-right: 15px;
+  }
+  
+  .recipe-list p {
+    margin: 0;
+  }
+  

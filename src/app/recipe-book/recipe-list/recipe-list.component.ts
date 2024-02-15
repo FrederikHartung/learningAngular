@@ -4,9 +4,24 @@ import { Recipe } from '../recipe.model';
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrl: './recipe-list.component.css'
+  styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent {
-  public recipes: Recipe[] = [new Recipe('A Test Recipe', 'This is simply a test', 'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg')];
-
+  public recipes: Recipe[] = [
+    new Recipe(
+      'Test Title',
+      'Test Description',
+      'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg'
+    ),
+    new Recipe(
+      'Test Title 2',
+      'Test Description 2',
+      'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg'
+    ),
+    new Recipe(
+      'Test Title 3',
+      'Test Description 3',
+      'https://www.simplyrecipes.com/wp-content/uploads/2019/03/shakshuka-horiz-a-1600.jpg'
+    )
+  ];
 }
