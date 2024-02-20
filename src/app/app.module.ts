@@ -10,6 +10,7 @@ import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail
 import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { SpecialdayComponent } from './specialday/specialday.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    SpecialdayComponent
   ],
   imports: [
     BrowserModule,
