@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  onClickShoppingList() {
+    console.log('Shopping List Clicked');
+  }
+  onClickRecipes() {
+    console.log('Recipes Clicked');
+  }
 
 }
