@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,26 +7,31 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent {
+  @Output() recipeSelected = new EventEmitter<Recipe>();
   public recipes: Recipe[] = [
     new Recipe(
-      'Test Title',
-      'Test Description',
-      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg'
+      'Omas Pfannkuchen',
+      'Dies ist ein Rezept für Omas Pfannkuchen',
+      'https://live.staticflickr.com/65535/50857524133_1be9c4d5e8_h.jpg'
     ),
     new Recipe(
-      'Test Title 2',
-      'Test Description 2',
-      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg'
+      'Erikas Spaghetti ala Carbonara',
+      'Dies ist ein Rezept für Erikas Spaghetti ala Carbonara',
+      'https://ais.kochbar.de/kbrezept/560980_1177117/1200x1200/spaghetti-napoli-rezept-bild-nr-2.jpg'
     ),
     new Recipe(
-      'Test Title 3',
-      'Test Description 3',
-      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg'
+      'Kartoffelsalat nach Müllerin Art',
+      'Dies ist ein Rezept für Kartoffelsalat nach Müllerin Art',
+      'https://img.chefkoch-cdn.de/rezepte/189081080567822/bilder/807103/crop-360x240/kartoffelsalat-nach-mutters-art-mit-fleischsalat.jpg'
     ),
     new Recipe(
       'Saskias Guoza',
-      'Her favorite food',
+      'Dieses Gericht sorgt bei jeden geselligen Abend für strahlende Gesichter.',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Japanese_pan_fried_gyoza.jpg/1599px-Japanese_pan_fried_gyoza.jpg?20170712141633'
     )
   ];
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeSelected.emit(recipe);
+  }
 }
