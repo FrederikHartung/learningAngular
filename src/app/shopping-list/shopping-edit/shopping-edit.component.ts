@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './shopping-edit.component.css'
 })
 export class ShoppingEditComponent {
-
+  onAddItem() {
+    console.log('Add Item');
+  }
+  onDeleteItem() {
+    console.log('Delete Item');
+  }
+  onClearList() {
+    console.log('Clear List');
+  }
 }

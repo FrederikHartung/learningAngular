@@ -5,25 +5,11 @@ import { Ingredient } from "../shared/ingredient.model";
     selector: 'app-shopping-list',
     templateUrl: './shopping-list.component.html'
 })
-export class ShoppingListComponent implements OnInit, OnChanges{
+export class ShoppingListComponent{
     ingredients: Ingredient[] = [
         new Ingredient('Apples', 5),
         new Ingredient('Tomatoes', 10),
     ];
-
-    constructor() {
-        console.log('ShoppingListComponent constructor called');
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log('ShoppingListComponent ngOnChanges called');
-        console.log(changes);
-    }
-
-    ngOnInit(): void {
-        console.log('ShoppingListComponent ngOnInit called');
-    }
-
 
     //all ng... methods are lifecycle hooks
     //ngOnInit is called after the constructor
