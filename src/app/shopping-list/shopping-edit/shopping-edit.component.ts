@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './shopping-edit.component.css'
 })
 export class ShoppingEditComponent {
-  onAddItem() {
-    console.log('Add Item');
+  @Output() ingredientAdded = new EventEmitter<{name: string, amount: number}>();
+
+  onAddItem(name: string, amount: number) {
+    console.log('name: ' + name + ' amount: ' + amount);
+    this.ingredientAdded.emit({name, amount: amount});
   }
+
   onDeleteItem() {
     console.log('Delete Item');
   }
