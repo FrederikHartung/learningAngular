@@ -1,13 +1,20 @@
 <div class="row">
     <div class="col-xs-10">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit 
+            (ingredientAddedEvent)="onIngredienceAdded($event)"
+            (clearListEvent)="onClearList()"
+            (ingredientDeletedEvent)="onIngredienceDeleted()"
+            >
+        </app-shopping-edit>
         <hr>
         <ul class="list-group">
             <a 
             class="list-group-item" 
             style="cursor: pointer"
-            *ngFor="let ingredient of ingredients">
-            {{ ingredient.getName() }} ({{ ingredient.getAmount() }})
+            *ngFor="let ingredient of ingredients; let i = index"
+            [ngClass]="{highlighted: i === this.selectedIngredientIndex}"
+            (click)="onIngredientClick(i)"
+            >{{ ingredient.getName() }} ({{ ingredient.getAmount() }})
             </a>
         </ul>
     </div>

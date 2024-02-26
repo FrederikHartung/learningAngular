@@ -1,0 +1,5 @@
+.highlighted {
+    background-color: #f0f0f0; /* Hellgrauer Hintergrund */
+    color: #333; /* Dunkle Schrift */
+    border-left: 5px solid #007bff; /* Blaue Linie links */
+}
