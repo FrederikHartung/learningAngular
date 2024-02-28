@@ -13,6 +13,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { SpecialdayComponent } from './specialday/specialday.component';
 import { BasicHighlightDirective } from './shopping-list/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './shopping-list/better-hightlight/better-highlight.directive';
+import { UnlessDirective } from './shopping-list/unless.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BetterHighlightDirective } from './shopping-list/better-hightlight/bett
     ShoppingEditComponent,
     SpecialdayComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
