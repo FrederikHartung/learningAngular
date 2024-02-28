@@ -11,9 +11,9 @@ import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.compo
 import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { SpecialdayComponent } from './specialday/specialday.component';
-import { BasicHighlightDirective } from './shopping-list/basic-highlight/basic-highlight.directive';
-import { BetterHighlightDirective } from './shopping-list/better-hightlight/better-highlight.directive';
-import { UnlessDirective } from './shopping-list/unless.directive';
+import { BasicHighlightDirective } from './directives/basic-highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [

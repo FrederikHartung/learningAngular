@@ -7,6 +7,7 @@ import { Ingredient } from "../shared/ingredient.model";
     styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent{
+    onlyOdd: boolean = false;
     selectedIngredientIndex: number | null = null;
 
     ingredients: Ingredient[] = [
@@ -33,5 +34,6 @@ export class ShoppingListComponent{
     onIngredientClick(index: number) {
         console.log('Clicked ingredient index:', index);
         this.selectedIngredientIndex = index;
+        this.onlyOdd = !this.onlyOdd;
     }
 }
