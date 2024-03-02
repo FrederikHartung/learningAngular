@@ -14,7 +14,7 @@ import { SpecialdayComponent } from './specialday/specialday.component';
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
-import { DropdownDirective } from './shared/dropdown.directive';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [

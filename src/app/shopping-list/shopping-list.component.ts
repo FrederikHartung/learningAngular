@@ -1,12 +1,18 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from "@angular/core";
 import { Ingredient } from "../shared/ingredient.model";
+import { LoggingService } from "../shared/logging.service";
 
 @Component({
     selector: 'app-shopping-list',
     templateUrl: './shopping-list.component.html',
-    styleUrls: ['./shopping-list.component.css']
+    styleUrls: ['./shopping-list.component.css'],
+    providers: [LoggingService]
 })
 export class ShoppingListComponent{
+    constructor(private loggingService: LoggingService){
+
+    }
+
     selectedIngredientIndex: number | null = null;
 
     ingredients: Ingredient[] = [
@@ -16,6 +22,7 @@ export class ShoppingListComponent{
 
     onIngredienceAdded(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
+        this.loggingService.logIngredienceAdded(ingredient.name, ingredient.amount);
     }
 
     onIngredienceDeleted() {
