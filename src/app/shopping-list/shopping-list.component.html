@@ -15,17 +15,7 @@
             [ngClass]="{highlighted: i === this.selectedIngredientIndex}"
             (click)="onIngredientClick(i)"
             >{{ ingredient.getName() }} ({{ ingredient.getAmount() }})
-            <h2 *ngIf="i === this.selectedIngredientIndex; else nothingSecelcted">selected: {{ ingredient.getName() }}</h2>
-            <ng-template #nothingSecelcted>No ingredient selected</ng-template>
             </a>
         </ul>
-        <p appBasicHighlight>This is a basic test</p>
-        <p
-            appBetterHighlight 
-            [defaultColor]="'yellow'"
-            [highlightColor]="'red'"
-            >This is a better test
-        </p>
-        
     </div>
 </div>
