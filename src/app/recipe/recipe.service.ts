@@ -1,7 +1,7 @@
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
-    recipes: Recipe[] = [new Recipe(
+    private recipes: Recipe[] = [new Recipe(
         'Omas Pfannkuchen',
         'Dies ist ein Rezept für Omas Pfannkuchen',
         'https://live.staticflickr.com/65535/50857524133_1be9c4d5e8_h.jpg'
@@ -23,6 +23,6 @@ export class RecipeService {
       )]; 
     
     getRecipes(): Recipe[] {
-        return this.recipes;
+        return this.recipes.slice();
     }
 }
