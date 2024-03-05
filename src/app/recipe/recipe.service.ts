@@ -1,6 +1,8 @@
+import { EventEmitter } from "@angular/core";
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
+    recipeSelectedEvent = new EventEmitter<Recipe>();
     private recipes: Recipe[] = [new Recipe(
         'Omas Pfannkuchen',
         'Dies ist ein Rezept für Omas Pfannkuchen',
@@ -24,5 +26,9 @@ export class RecipeService {
     
     getRecipes(): Recipe[] {
         return this.recipes.slice();
+    }
+
+    onRecipeSelected(recipe: Recipe) {
+        this.recipeSelectedEvent.emit(recipe);
     }
 }
