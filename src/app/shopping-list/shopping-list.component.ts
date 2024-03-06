@@ -17,11 +17,11 @@ export class ShoppingListComponent implements OnInit{
 
     ngOnInit() {
         this.ingredients = this.shoppingListService.getIngredients();
-    }
-
-    onIngredienceAdded(ingredient: Ingredient) {
-        this.shoppingListService.addIngredient(ingredient);
-        this.loggingService.logIngredienceAdded(ingredient.name, ingredient.amount);
+        this.shoppingListService.ingredientsChanged.subscribe(
+            (ingredients: Ingredient[]) => {
+                this.ingredients = ingredients;
+            }
+        );
     }
 
     onIngredienceDeleted() {
@@ -30,10 +30,7 @@ export class ShoppingListComponent implements OnInit{
         }
 
        this.shoppingListService.removeIngredient(this.selectedIngredientIndex);
-    }
-
-    onClearList() {
-        this.ingredients = [];
+       console.log('Deleted ingredient index:', this.selectedIngredientIndex);
     }
 
     onIngredientClick(index: number) {
