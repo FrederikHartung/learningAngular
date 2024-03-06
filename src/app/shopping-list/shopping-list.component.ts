@@ -1,6 +1,7 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Ingredient } from "../shared/ingredient.model";
 import { LoggingService } from "../shared/logging.service";
+import { ShoppingListService } from "./shopping-list.service";
 
 @Component({
     selector: 'app-shopping-list',
@@ -8,17 +9,18 @@ import { LoggingService } from "../shared/logging.service";
     styleUrls: ['./shopping-list.component.css'],
     providers: [LoggingService]
 })
-export class ShoppingListComponent{
+export class ShoppingListComponent implements OnInit{
     selectedIngredientIndex: number | null = null;
-    ingredients: Ingredient[] = [
-        new Ingredient('Apples', 5),
-        new Ingredient('Tomatoes', 10),
-    ];
+    ingredients: Ingredient[]
 
-    constructor(private loggingService: LoggingService){}
+    constructor(private loggingService: LoggingService, private shoppingListService: ShoppingListService){}
+
+    ngOnInit() {
+        this.ingredients = this.shoppingListService.getIngredients();
+    }
 
     onIngredienceAdded(ingredient: Ingredient) {
-        this.ingredients.push(ingredient);
+        this.shoppingListService.addIngredient(ingredient);
         this.loggingService.logIngredienceAdded(ingredient.name, ingredient.amount);
     }
 
@@ -27,7 +29,7 @@ export class ShoppingListComponent{
             return;
         }
 
-       this.ingredients.splice(this.selectedIngredientIndex, 1);
+       this.shoppingListService.removeIngredient(this.selectedIngredientIndex);
     }
 
     onClearList() {
