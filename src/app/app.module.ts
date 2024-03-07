@@ -17,6 +17,14 @@ import { UnlessDirective } from './directives/unless.directive';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipe/recipe.service';
+import { Router, RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: RecipeBookComponent },
+  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'recipe', component: RecipeBookComponent},
+  { path: 'specialday', component: SpecialdayComponent }
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +44,8 @@ import { RecipeService } from './recipe/recipe.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
