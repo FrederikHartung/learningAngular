@@ -15,6 +15,11 @@ export class ShoppingEditComponent {
   constructor(private shoppingListService: ShoppingListService) { }
 
   onAddItem(name: string, amount: number) {
+    if(!name || !amount || amount <= 0) {
+      console.log('Invalid input');
+      return;
+    }
+
     this.shoppingListService.addIngredient(new Ingredient(name, amount));
     console.log('Added ingredient:', name, amount);
   }
