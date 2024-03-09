@@ -16,7 +16,6 @@ export class ShoppingEditComponent {
 
   onAddItem(name: string, amount: number) {
     if(!name || !amount || amount <= 0) {
-      console.log('Invalid input');
       return;
     }
 
