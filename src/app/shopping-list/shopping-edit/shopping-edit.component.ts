@@ -28,6 +28,7 @@ export class ShoppingEditComponent {
   }
 
   onClearList() {
+    console.log('Clearing list');
     this.shoppingListService.clearIngredients();
   }
 }
