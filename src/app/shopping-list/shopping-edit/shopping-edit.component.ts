@@ -24,6 +24,7 @@ export class ShoppingEditComponent {
   }
 
   onDeleteItem() {
+    console.log('Deleting ingredient');
     this.ingredientDeletedEvent.emit();
   }
 
